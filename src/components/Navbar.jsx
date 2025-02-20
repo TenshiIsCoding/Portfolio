@@ -13,14 +13,14 @@ const Navbar = () => {
       <div className='w-full flex justify-between items-center max-w-7x1 mx-auto'>
         <Link 
           to='/'
-          className="flex items-center gap-2"
+          className="flex items-center"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-16 h-16 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">Anir &nbsp;<span className="sm:block hidden">| Creative Developer</span></p>
+          <img src={logo} alt="logo" className="w-20 h-16 object-contain" />
+          <p className="text-white text-[18px] font-bold cursor-pointer flex"><span className="sm:block hidden">|&nbsp;&nbsp; <span className='text-[#ffb703]'>Creative Developer</span></span></p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
             {navLinks.map((link) => (
