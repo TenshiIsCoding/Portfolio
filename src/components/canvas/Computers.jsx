@@ -15,7 +15,6 @@ const Computers = (isMobile) => {
       <spotLight
       position={[15, 15, 50]}
       angle={0.22}
-      penumbra={1}
       intensity={1}
       castShadow
       shadow-mapSize={1024}
