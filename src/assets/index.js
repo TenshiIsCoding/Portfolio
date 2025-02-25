@@ -20,6 +20,7 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import vite from "./tech/vite.png";
 
 import enactus from "./clubs/enactus.png";
 import leetmusic from "./clubs/leetmusic.jpg";
@@ -57,5 +58,6 @@ export {
   wmd,
   carrent,
   jobit,
+  vite,
   tripguide,
 };

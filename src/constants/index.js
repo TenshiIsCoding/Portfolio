@@ -21,6 +21,7 @@ import {
     carrent,
     jobit,
     tripguide,
+    vite,
     threejs,
   } from "../assets";
   
@@ -72,29 +73,25 @@ import {
       icon: javascript,
     },
     {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
       name: "React JS",
       icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
     },
     {
       name: "Tailwind CSS",
       icon: tailwind,
     },
+    // {
+    //   name: "Node JS",
+    //   icon: nodejs,
+    // },
     {
-      name: "Node JS",
-      icon: nodejs,
+      name: "Vite",
+      icon: vite,
     },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
+    // {
+    //   name: "MongoDB",
+    //   icon: mongodb,
+    // },
     {
       name: "Three JS",
       icon: threejs,
