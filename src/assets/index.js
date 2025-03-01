@@ -27,9 +27,12 @@ import leetmusic from "./clubs/leetmusic.jpg";
 import wmd from "./clubs/webdevc.jpg";
 
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import cub3d from "./cub3d.jpg";
+import inception from "./inception.webp";
+import minibash from "./minibash.webp";
+import pongverse from "./pongverse.png"
+import simpleirssi from "./simpleirssi.webp"
+import portfolio from "./portfolio.png"
 
 export {
   logo,
@@ -56,8 +59,11 @@ export {
   enactus,
   leetmusic,
   wmd,
-  carrent,
-  jobit,
   vite,
-  tripguide,
+  cub3d,
+  inception,
+  minibash,
+  pongverse,
+  simpleirssi,
+  portfolio
 };

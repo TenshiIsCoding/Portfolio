@@ -44,7 +44,7 @@ const About = () => {
       I’m a passionate and versatile software engineer with a strong focus on full-stack development. A natural creative and quick learner, I thrive on collaborating closely with clients to design efficient, user-friendly solutions that solve real-world problems. With a keen eye for innovation and a commitment to excellence, I’m always eager to turn ideas into impactful digital experiences. Let’s connect and bring those ideas to life!
     </motion.p>
 
-    <div className='mt-20 flex flex-wrap gap-10'>
+    <div className='mt-20 flex flex-wrap gap-10 justify-center'>
       {services.map((service, index) => (
         <ServiceCard key={service.title} index={index} {...service} />
       ))}

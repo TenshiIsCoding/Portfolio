@@ -18,11 +18,14 @@ import {
     leetmusic,
     enactus,
     wmd,
-    carrent,
-    jobit,
-    tripguide,
-    vite,
     threejs,
+    vite,
+    cub3d,
+    inception,
+    minibash,
+    pongverse,
+    simpleirssi,
+    portfolio
   } from "../assets";
   
   export const navLinks = [
@@ -133,7 +136,7 @@ import {
       points: [
         "Planning & Executing Projects – Setting clear goals, managing resources, and ensuring measurable impact.",
         "Collaboration & Teamwork – Working with other developers has strengthened my ability to communicate, share knowledge, and build projects efficiently.",
-        "Problem-Solving & Debugging – I’ve learned to tackle Web Developement challenges, optimize performance, and troubleshoot issues effectively.",
+        "Problem-Solving – I’ve learned to tackle challenges, optimize performance, and troubleshoot issues effectively.",
         "Ensuring Sustainability – Measuring impact and building long-term, scalable solutions.",
       ],
     },
@@ -157,7 +160,7 @@ import {
       iconBg: "#000000",
       date: "Oct 2023",
       points: [
-        "Project & Team Management – Leading the club has sharpened my ability to manage projects, coordinate events, and keep teams aligned—skills essential in software development.",
+        "Project & Team Management – Leading the club has sharpened my ability to manage projects, coordinating large events, and keeping teams aligned—skills essential in software development.",
         "Problem-Solving & Adaptability – Organizing performances and handling logistics has enhanced my ability to troubleshoot issues, think critically, and stay adaptable under pressure.",
         "Building & Managing Online Presence – I’ve overseen the club’s digital presence, reinforcing my experience with digital strategy.",
         "Creativity – Composing music and organizing performances have honed my creative thinking, helping me approach software engineering challenges with innovative solutions."
@@ -165,87 +168,19 @@ import {
     },
   ];
   
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "PongVerse",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "A game website and a 3D gaming experience with Three.js, featuring real-time 1v1 matches and a tournament system. Contributed to a full-stack project with secure authentication, real-time communication, and scalable deployment. ",
       tags: [
         {
-          name: "react",
+          name: "javascript",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
+          name: "threejs",
           color: "green-text-gradient",
         },
         {
@@ -253,9 +188,115 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      image: pongverse,
       source_code_link: "https://github.com/",
     },
+    {
+      name: "Simple Irssi",
+      description:
+        "An interesting project that undertakes exploring computer networking and communication protocols",
+      tags: [
+        {
+          name: "C++",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "networkprogramming",
+          color: "green-text-gradient",
+        },
+        {
+          name: "sockets",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: simpleirssi,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "Inception",
+      description:
+        "Inception is a foundational DevOps project in the 42 school curriculum designed to be an introduction to containerization, system administration, and infrastructure management. The goal is to set up a secure and scalable system using Docker while adhering to strict guidelines.",
+      tags: [
+        {
+          name: "docker",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "nginx",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: inception,
+      source_code_link: "https://github.com/",
+    },
+    {
+      name: "MiniBash",
+      description:
+        "MiniBash is an important project challenged me to build a simple UNIX shell from scratch, reinforcing my understanding of process management, system calls, and command execution.",
+      tags: [
+        {
+          name: "C",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "systemsprogramming",
+          color: "green-text-gradient",
+        },
+        {
+          name: "reverse_engineering",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: minibash,
+      source_code_link: "https://github.com/TenshiIsCoding/Inception",
+    },
+    {
+      name: "Cub3D",
+      description:
+        "Cub3D is a 42 curriculum project that challenges students to create a basic 3D game engine using Raycasting, inspired by Wolfenstein 3D. It serves as an introduction to computer graphics, game development, and mathematical rendering techniques.",
+      tags: [
+        {
+          name: "C",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "minilibx",
+          color: "green-text-gradient",
+        },
+        {
+          name: "gamedev",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: cub3d,
+      source_code_link: "https://github.com/TenshiIsCoding/cub3d",
+    },
+    {
+      name: "Portfolio",
+      description:
+        "A dev portfolio where i aimed to show off my creativity and also learn new techniques in front-end developement using React, Tailwind and Threejs Fiber.",
+      tags: [
+        {
+          name: "C",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "minilibx",
+          color: "green-text-gradient",
+        },
+        {
+          name: "gamedev",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: portfolio,
+      source_code_link: "https://github.com/TenshiIsCoding/Portfolio",
+    },
+    
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, projects };

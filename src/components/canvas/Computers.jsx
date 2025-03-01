@@ -1,30 +1,51 @@
-import { Suspense, useEffect, useState } from 'react'
-
-import { Canvas } from '@react-three/fiber'
+import { Suspense, useEffect, useState, useRef } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
+import { Stars } from './Stars'
 
-const Computers = (isMobile) => {
-  const  computer = useGLTF('/desktop_pc/scene.gltf')
+const Computers = ({ isMobile }) => {
+  const computer = useGLTF('/desktop_pc/scene.gltf')
+  const modelRef = useRef()
+  const [initialAnimation, setInitialAnimation] = useState(true)
+  const [scale, setScale] = useState(0)
+  const targetScale = isMobile ? 13 : 18
+  
+  useFrame(() => {
+    if (initialAnimation) {
+      setScale((prevScale) => {
+        const newScale = prevScale + (targetScale - prevScale) * 0.05
+        if (Math.abs(newScale - targetScale) < 0.1) {
+          setInitialAnimation(false)
+          return targetScale;
+        }
+        return newScale;
+      });
+      
+      if (modelRef.current) {
+        modelRef.current.rotation.y += 0.01;
+      }
+    }
+  });
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15}
-      groundColor="black" />
+      <hemisphereLight intensity={0.15} groundColor="black" />
       <pointLight intensity={1} />
       <spotLight
-      position={[15, 15, 50]}
-      angle={0.22}
-      intensity={1}
-      castShadow
-      shadow-mapSize={1024}
+        position={[15, 15, 50]}
+        angle={0.22}
+        intensity={1}
+        castShadow
+        shadow-mapSize={1024}
       />
       <primitive
-      object={computer.scene}
-      scale={isMobile ? 15 : 10}
-      position={[0, -4.25, 0]}
-      rotation={[0, -150, 0]}
-      receiveShadow
+        ref={modelRef}
+        object={computer.scene}
+        scale={initialAnimation ? scale : targetScale}
+        position={[0, -5.75, 0]}
+        rotation={[0, 6.3, 0]}
+        receiveShadow
       />
     </mesh>
   )
@@ -32,9 +53,9 @@ const Computers = (isMobile) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false)
-
+  
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 500px)');
+    const mediaQuery = window.matchMedia('(max-width: 640px)');
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
@@ -49,22 +70,44 @@ const ComputersCanvas = () => {
   }, [])
 
   return (
-    <Canvas
-      frameloop='demand'
-      shadows
-      camera={{position: [20, 3, 5], fov: 50}}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile}/>
-      </Suspense>
-      <Preload all />
-    </Canvas>
+    <div style={{ position: 'relative', width: '100%', height: '85%' }}>
+      <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }}>
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 3 }}
+          gl={{ preserveDrawingBuffer: true }}
+        >
+          <Suspense fallback={null}>
+            <Stars
+              radius={300}
+              depth={50}
+              factor={4}
+              saturation={0}
+              fade
+              speed={0.3}
+            />
+          </Suspense>
+        </Canvas>
+      </div>
+      
+      <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1 }}>
+        <Canvas
+          frameloop='always'
+          shadows
+          camera={{ position: [20, 3, 5], fov: 50 }}
+          gl={{ preserveDrawingBuffer: true }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <OrbitControls
+              enableZoom={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+            <Computers isMobile={isMobile} />
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      </div>
+    </div>
   )
 }
 
