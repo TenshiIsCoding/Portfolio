@@ -34,7 +34,7 @@ import {
       title: "About",
     },
     {
-      id: "work",
+      id: "works",
       title: "Work",
     },
     {
@@ -226,7 +226,7 @@ import {
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "MySQL",
           color: "pink-text-gradient",
         },
       ],

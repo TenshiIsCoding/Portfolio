@@ -86,6 +86,7 @@ const ComputersCanvas = () => {
               speed={0.3}
             />
           </Suspense>
+          <Preload all />
         </Canvas>
       </div>
       

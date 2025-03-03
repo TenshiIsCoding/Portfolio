@@ -31,20 +31,20 @@ const Contact = () => {
   const handleSubmit = (e) => {}
 
   return (
-    <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+    <div className='xl:mt-12 flex flex-col-reverse xl:flex-row gap-10 overflow-hidden pb-8 md:pb-0 items-center'>
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className='flex-[0.8] blue-gradient p-12 rounded-2xl'
+        className='flex-[0.75] blue-gradient p-8 rounded-2xl w-full max-w-md xl:max-w-none'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact me at:</h3>
+        <h3 className="text-white font-black md:text-[40px] sm:text-[50px] xs:text-[40px] text-[30px]">Contact me:</h3>
         <p className='pb-6 text-secondary text-[25px]'>anirzaher@gmail.com</p>
         <LinkedInButton/>
       </motion.div>
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] w-full max-w-md xl:max-w-none'
       >
         <EarthCanvas/>
       </motion.div>

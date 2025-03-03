@@ -7,16 +7,15 @@ const Earth = () => {
   const earth = useGLTF('./planet/scene.gltf')
 
   return (
-      <mesh>
-      <hemisphereLight intensity={0.3}
-        groundColor="black" />
-        <pointLight intensity={2} />
-        <spotLight
+    <mesh>
+      <hemisphereLight intensity={0.3} groundColor="black" />
+      <pointLight intensity={2} />
+      <spotLight
         position={[15, 15, 50]}
         angle={0.22}
         intensity={1.5}
         shadow-mapSize={1024}
-        />
+      />
       <primitive
         object={earth.scene}
         scale={2.1}
@@ -38,17 +37,19 @@ const EarthCanvas = () => {
         near: 0.1,
         far: 200,
         position: [-4, 3, 6]
-       }}
+      }}
+      style={{ width: '100%', height: '100%' }}
     >
       <Suspense fallback={<CanvasLoader />}>
-      <OrbitControls
-        autoRotate
-        enableZoom={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
+        <OrbitControls
+          autoRotate
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
         <Earth/>
       </Suspense>
+      <Preload all />
     </Canvas>
   )
 }
