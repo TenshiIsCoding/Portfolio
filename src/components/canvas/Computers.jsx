@@ -9,7 +9,7 @@ const Computers = ({ isMobile }) => {
   const modelRef = useRef()
   const [initialAnimation, setInitialAnimation] = useState(true)
   const [scale, setScale] = useState(0)
-  const targetScale = isMobile ? 13 : 18
+  const targetScale = isMobile ? 0.10 : 0.15
   
   useFrame(() => {
     if (initialAnimation) {
@@ -33,19 +33,17 @@ const Computers = ({ isMobile }) => {
       <hemisphereLight intensity={0.15} groundColor="black" />
       <pointLight intensity={1} />
       <spotLight
-        position={[15, 15, 50]}
+        position={[40, 15, 50]}
         angle={0.22}
         intensity={1}
-        castShadow
         shadow-mapSize={1024}
       />
       <primitive
         ref={modelRef}
         object={computer.scene}
         scale={initialAnimation ? scale : targetScale}
-        position={[0, -5.75, 0]}
-        rotation={[0, 6.3, 0]}
-        receiveShadow
+        position={[0, -5, 0]}
+        rotation={[0, 7.1, 0]}
       />
     </mesh>
   )
@@ -73,7 +71,7 @@ const ComputersCanvas = () => {
     <div style={{ position: 'relative', width: '100%', height: '85%' }}>
       <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }}>
         <Canvas
-          camera={{ position: [0, 0, 10], fov: 3 }}
+          camera={{ position: [0, 0, 10], fov: 5 }}
           gl={{ preserveDrawingBuffer: true }}
         >
           <Suspense fallback={null}>
