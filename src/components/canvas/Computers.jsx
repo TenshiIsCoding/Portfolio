@@ -9,7 +9,7 @@ const Computers = ({ isMobile }) => {
   const modelRef = useRef()
   const [initialAnimation, setInitialAnimation] = useState(true)
   const [scale, setScale] = useState(0)
-  const targetScale = isMobile ? 0.10 : 0.15
+  const targetScale = isMobile ? 0.08 : 0.15
   
   useFrame(() => {
     if (initialAnimation) {
@@ -42,7 +42,7 @@ const Computers = ({ isMobile }) => {
         ref={modelRef}
         object={computer.scene}
         scale={initialAnimation ? scale : targetScale}
-        position={[0, -5, 0]}
+        position={[0, -5, 0.5]}
         rotation={[0, 7.1, 0]}
       />
     </mesh>

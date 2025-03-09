@@ -281,15 +281,15 @@ import {
         "A dev portfolio where i aimed to show off my creativity and also learn new techniques in front-end developement using React, Tailwind and Threejs Fiber.",
       tags: [
         {
-          name: "C",
+          name: "React",
           color: "blue-text-gradient",
         },
         {
-          name: "minilibx",
+          name: "tailwindcss",
           color: "green-text-gradient",
         },
         {
-          name: "gamedev",
+          name: "threejs",
           color: "pink-text-gradient",
         },
       ],
