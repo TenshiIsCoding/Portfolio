@@ -69,24 +69,27 @@ const ComputersCanvas = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '85%' }}>
-      <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }}>
-        <Canvas
-          camera={{ position: [0, 0, 10], fov: 5 }}
-          gl={{ preserveDrawingBuffer: true }}
-        >
-          <Suspense fallback={null}>
-            <Stars
-              radius={300}
-              depth={50}
-              factor={4}
-              saturation={0}
-              fade
-              speed={0.3}
-            />
-          </Suspense>
-          <Preload all />
-        </Canvas>
-      </div>
+      {/* Only render stars background if not on mobile */}
+      {!isMobile && (
+        <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }}>
+          <Canvas
+            camera={{ position: [0, 0, 10], fov: 5 }}
+            gl={{ preserveDrawingBuffer: true }}
+          >
+            <Suspense fallback={null}>
+              <Stars
+                radius={300}
+                depth={50}
+                factor={4}
+                saturation={0}
+                fade
+                speed={0.3}
+              />
+            </Suspense>
+            <Preload all />
+          </Canvas>
+        </div>
+      )}
       
       <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1 }}>
         <Canvas

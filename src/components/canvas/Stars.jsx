@@ -56,6 +56,28 @@ export const Stars = (props) => {
 }
 
 const StarsCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 640px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
+
+  // Don't render stars on mobile
+  if (isMobile) {
+    return null;
+  }
+
   return(
     <div className='w-full h-full absolute inset-0 z-[-1]'>
       <Canvas camera={{position: [0, 0, 5], fov: 4}}>
