@@ -9,7 +9,7 @@ export const Stars = (props) => {
   
   useEffect(() => {
     try {
-      const numPoints = 1500;
+      const numPoints = 250;
       const positions = new Float32Array(numPoints * 3);
       
       for (let i = 0; i < numPoints * 3; i += 3) {
