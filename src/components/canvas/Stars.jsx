@@ -7,25 +7,36 @@ export const Stars = (props) => {
   const ref = useRef()
   const [sphere, setSphere] = useState(null)
   
-  // Create the sphere data in useEffect to avoid NaN values
   useEffect(() => {
-    const positions = new Float32Array(5000);
-    const randomValues = random.inSphere(positions, { radius: 1.2 });
-    
-    // Ensure there are no NaN values in the array
-    for (let i = 0; i < positions.length; i++) {
-      if (isNaN(positions[i])) {
-        positions[i] = 0;
+    try {
+      const numPoints = 1500;
+      const positions = new Float32Array(numPoints * 3);
+      
+      for (let i = 0; i < numPoints * 3; i += 3) {
+        const r = 1.2 * Math.cbrt(Math.random());
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos((2 * Math.random()) - 1);
+        
+        positions[i] = r * Math.sin(phi) * Math.cos(theta);
+        positions[i+1] = r * Math.sin(phi) * Math.sin(theta);
+        positions[i+2] = r * Math.cos(phi);
       }
+      
+      setSphere(positions);
+    } catch (error) {
+      console.error("Error creating star field:", error);
+      const fallback = new Float32Array(300 * 3);
+      for (let i = 0; i < fallback.length; i++) {
+        fallback[i] = (Math.random() - 0.5) * 2;
+      }
+      setSphere(fallback);
     }
-    
-    setSphere(positions);
   }, [])
 
   useFrame((state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10
-      ref.current.rotation.y -= delta / 15
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
     }
   })
 

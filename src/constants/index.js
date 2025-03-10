@@ -189,7 +189,7 @@ import {
         },
       ],
       image: pongverse,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/Mustapha-Moumanis/transcendence",
     },
     {
       name: "Simple Irssi",
@@ -231,7 +231,7 @@ import {
         },
       ],
       image: inception,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/TenshiIsCoding/Inception",
     },
     {
       name: "MiniBash",
@@ -252,7 +252,7 @@ import {
         },
       ],
       image: minibash,
-      source_code_link: "https://github.com/TenshiIsCoding/Inception",
+      source_code_link: "https://github.com/",
     },
     {
       name: "Cub3D",

@@ -9,7 +9,7 @@ const Computers = ({ isMobile }) => {
   const modelRef = useRef()
   const [initialAnimation, setInitialAnimation] = useState(true)
   const [scale, setScale] = useState(0)
-  const targetScale = isMobile ? 0.08 : 0.15
+  const targetScale = isMobile ? 0.08 : 0.12
   
   useFrame(() => {
     if (initialAnimation) {
