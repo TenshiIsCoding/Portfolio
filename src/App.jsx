@@ -34,7 +34,6 @@ const App = () => {
       <Works />
       <div className="relative z-0">
         <Contact />
-        {/* Only render StarsCanvas if not on mobile */}
         {!isMobile && <StarsCanvas />}
       </div>
     </div>

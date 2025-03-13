@@ -210,7 +210,7 @@ import {
         },
       ],
       image: simpleirssi,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/TenshiIsCoding/irssi_server",
     },
     {
       name: "Inception",
@@ -252,7 +252,7 @@ import {
         },
       ],
       image: minibash,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/TenshiIsCoding/minishell",
     },
     {
       name: "Cub3D",
